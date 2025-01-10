@@ -1,7 +1,14 @@
 # 📊 Predicting Life Expectancy
 
 ## 👀 Overview
-This project explores methods to predict life expectancy using machine learning models. It aims to identify the best-performing approach by improving the \( R^2 \) score through feature engineering and model optimization. 
+This project explores methods to predict life expectancy using machine learning models. It aims to identify the best-performing approach by improving the R² score through feature engineering and model optimization. 
+
+---
+
+## Problem statement: 
+To predict the life expectancy of people in a country based on various immunization factors and the country in which they are based so that necessary action can be taken to increase the life expectancy.
+
+---
 
 ### 🪜 Key Steps:
 1. **Data Exploration** 
@@ -35,25 +42,37 @@ Understanding and predicting life expectancy can:
 
 ## 🔍 Methodology
 1. **Data Preprocessing**
-   - Imputation of missing values.
-   - Winsorization to handle outliers.
-   - Address multicollinearity using Variance Inflation Factor (VIF).
+    - Imputation of missing values
+    - Label /One Hot encoding.
+    - Format text.
 
 2. **Feature Selection**
-   - Identify highly correlated features to life expectancy.
-   - Perform Principal Component Analysis (PCA) to reduce dimensionality.
+    - Address multicollinearity using Variance Inflation Factor (VIF).
+    - Identify highly correlated features to life expectancy.
+    - Handle positive and negative skewness with Yeo-Jonson and Square methods.
+    - MinMax Scaling to normalize data.
+    - Perform Principal Component Analysis (PCA) to reduce dimensionality.
 
 3. **Model Training**
-   - Compare results from multiple regression models to maximize \( R^2 \).
+    - Use 60/40 and 80/20 splitted data to compare performance.
+    - Build a simple linear regression model over 60/40 data.
+    - Build a multilinear regression model with both 60/40 and 80/20 data.
+    - Plot the best fit line for each independent feature 
+    - Compare results from multiple regression models to maximize R².
+
+4. **Model Evaluation and Tuning**
+    - Display test data predictions for each model.
+    - Evaluate models using metrics such as Mean Squared Error (MSE), Mean Absolute Error (MAE), and R² Score.
+    - K-fold Cross Validation and Lasso Regression
 
 ---
 
 ## ✅ Results
-| Model                | \( R^2 \) Score        | Improvement |
-|----------------------|-----------------------|-------------|
-| Linear Regression    | 0.8054               | -           |
-| Lasso Regression     | 0.8064               | 0.012%      |
-| Multilinear Regression (80/20 Split) | Best Performance | Significant |
+| Model                | R² Score      |
+|----------------------|----------------------|
+| Linear Regression    | 0.8054               |
+| Lasso Regression     | 0.8047               |
+| Multilinear Regression (80/20 Split) | Best Performance |
 
 ---
 
